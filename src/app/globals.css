@@ -275,3 +275,24 @@ hr {
 .expandable-block.expanded::after {
   content: 'Click to collapse';
 }
+
+/* Mobile responsiveness */
+@media (max-width: 640px) {
+  .block-button {
+    padding: 14px 16px;
+  }
+
+  .block-button p {
+    word-break: break-word;
+  }
+  
+  .block-button a {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .block-button a p {
+    max-width: 100%;
+    text-overflow: ellipsis;
+  }
+}

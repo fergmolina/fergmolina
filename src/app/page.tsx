@@ -102,7 +102,8 @@ const mainnetDeployments = [
   {
     title: 'Book Collaboration',
     description: 'Wrote the chapter "Mechanism Design and the Ethereum Blockchain Transaction Fee Market" for The Elgar Companion to Decentralized Finance',
-    link: 'https://www.elgaronline.com/edcollbook/book/9781035307760/9781035307760.xml'
+    link: 'https://www.elgaronline.com/edcollbook/book/9781035307760/9781035307760.xml',
+    linkText: 'Elgar Companion to DeFi'
   }
 ];
 
@@ -319,7 +320,7 @@ export default function Home() {
 
         {/* OP Codes Unlocked */}
         <section>
-          <h2 className="text-2xl font-bold mb-4">Op Codes (Skills)</h2>
+          <h2 className="text-2xl font-bold mb-4">Opcodes (Skills)</h2>
           <div className="op-codes-skills">
             {skills.map((skill, index) => (
               <span key={index}>{skill}</span>
@@ -350,7 +351,7 @@ export default function Home() {
                             <polyline points="15 3 21 3 21 9"></polyline>
                             <line x1="10" y1="14" x2="21" y2="3"></line>
                           </svg>
-                          <span className="ml-1">{deployment.link.replace(/^https?:\/\/(www\.)?/, '')}</span>
+                          <span className="ml-1">{deployment.linkText || deployment.link.replace(/^https?:\/\/(www\.)?/, '')}</span>
                         </p>
                       </a>
                     )}
