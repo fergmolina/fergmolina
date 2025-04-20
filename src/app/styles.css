@@ -1,0 +1,32 @@
+/* Block button hover effects */
+.block-button p {
+  color: #9CA3AF;
+  transition: color 0.2s ease;
+}
+
+.block-button:hover p {
+  color: white !important;
+}
+
+.block-button .text-gray-500 {
+  transition: color 0.2s ease;
+}
+
+.block-button:hover .text-gray-500 {
+  color: white !important;
+}
+
+/* External link hover effects */
+.block-button a {
+  transition: color 0.2s ease;
+  font-size: inherit;
+}
+
+.block-button:hover a {
+  color: white !important;
+}
+
+/* Ensure hover effect works for links */
+.block-button:hover svg {
+  stroke: white;
+} 
