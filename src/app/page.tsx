@@ -1,7 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { CheckCircleIcon, ClockIcon, GlobeAltIcon, ChartPieIcon } from '@heroicons/react/24/solid';
 import { useState } from 'react';
 import './styles.css';
 
