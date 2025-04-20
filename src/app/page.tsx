@@ -90,12 +90,14 @@ const mainnetDeployments = [
   {
     title: 'Dune Dashboards & Analysis',
     description: 'Created dashboards and queries to study meme coins, DAOs and projects with different complexity',
-    link: 'https://dune.com/fergmolina'
+    link: 'https://dune.com/fergmolina',
+    status: 'In Progress'
   },
   {
     title: 'Bloque X',
     description: 'Data Analysis and Blockchain blog with analysis and tutorials in Spanish',
-    link: 'https://bloquex.me'
+    link: 'https://bloquex.me',
+    status: 'In Progress'
   },
   {
     title: 'Book Collaboration',
@@ -331,7 +333,7 @@ export default function Home() {
           <div className="connected-blocks">
             {mainnetDeployments.map((deployment, index) => (
               <div key={index}>
-                <div className="block-button confirmed">
+                <div className={`block-button ${deployment.status === 'In Progress' ? 'in-progress' : 'confirmed'}`}>
                   <div>
                     <h3>{deployment.title}</h3>
                     <p>{deployment.description}</p>
@@ -354,11 +356,23 @@ export default function Home() {
                     )}
                   </div>
                   <div className="flex items-center">
-                    <span className="text-green-500 text-sm font-medium">Confirmed</span>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-green-500 flex-shrink-0 ml-[5px]">
-                      <path d="M10 18.3334C14.6024 18.3334 18.3334 14.6024 18.3334 10C18.3334 5.39765 14.6024 1.66669 10 1.66669C5.39765 1.66669 1.66669 5.39765 1.66669 10C1.66669 14.6024 5.39765 18.3334 10 18.3334Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M7.5 10L9.16667 11.6667L12.5 8.33334" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
+                    {deployment.status === 'In Progress' ? (
+                      <>
+                        <span className="text-yellow-400 text-sm font-medium whitespace-nowrap">In Progress</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-yellow-400 flex-shrink-0 ml-[5px]">
+                          <path d="M10 18.3334C14.6024 18.3334 18.3334 14.6024 18.3334 10C18.3334 5.39765 14.6024 1.66669 10 1.66669C5.39765 1.66669 1.66669 5.39765 1.66669 10C1.66669 14.6024 5.39765 18.3334 10 18.3334Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M10 5V10L13.3333 11.6667" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </>
+                    ) : (
+                      <>
+                        <span className="text-green-500 text-sm font-medium">Confirmed</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-green-500 flex-shrink-0 ml-[5px]">
+                          <path d="M10 18.3334C14.6024 18.3334 18.3334 14.6024 18.3334 10C18.3334 5.39765 14.6024 1.66669 10 1.66669C5.39765 1.66669 1.66669 5.39765 1.66669 10C1.66669 14.6024 5.39765 18.3334 10 18.3334Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M7.5 10L9.16667 11.6667L12.5 8.33334" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </>
+                    )}
                   </div>
                 </div>
                 {index < mainnetDeployments.length - 1 && (
